@@ -38,3 +38,6 @@ LESSONS LEARNED
 
 shannonL -- 2017-11-13 13:37
 Created the repo, linked the submod, and created this beautiful devlog
+
+shannonL -- 2017 11-15 13:46
+Almost completed component map, finished task assignments
