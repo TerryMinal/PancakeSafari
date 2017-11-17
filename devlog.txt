@@ -35,23 +35,24 @@ LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ============================================================
-
 shannonL -- 2017-11-13 13:37
 --------------------------
 Created the repo, linked the submod, and created this beautiful devlog
 
-============================================================
+
 ireneL -- 2017-11-14 13:12
 --------------------------
 - Began and finished site map
-============================================================
+
 ireneL -- 2017-11-15 13:16
 --------------------------
 - Created page visions for Home, Start New Conversation, See Old Conversations, and Load Conversations (comes with corresponding example text and pictures)
 
-shannonL -- 2017 11-15 13:46
+shannonL -- 2017-11-15 13:46
 --------------------------
 Almost completed component map, finished task assignments
-============================================================
-shannonL -- 2017 11-16 13:19
+
+shannonL -- 2017-11-16 13:19
+--------------------------
 Pushed devlog
+
