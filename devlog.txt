@@ -56,3 +56,6 @@ shannonL -- 2017-11-16 13:19
 --------------------------
 Pushed devlog
 
+shannonL -- 2017-11-16 22:16
+Finished design doc officially
+
