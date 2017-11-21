@@ -67,3 +67,9 @@ Updated component map with corrected arrow
 shannonL -- 2017-11-19 22:20
 --------------------------
 Added possibility of a navigation bar to the design document
+
+shannonL -- 2017-11-21 13:55
+--------------------------
+Tested GIPHY API in giphy.py and test.html
+Works - however, be careful of parsing through the JSON because of many nested dictionaries
+Keep test.html until done testing 
