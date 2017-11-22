@@ -39,11 +39,11 @@ shannonL -- 2017-11-13 13:37
 --------------------------
 Created the repo, linked the submod, and created this beautiful devlog
 
-
+============================================================
 ireneL -- 2017-11-14 13:12
 --------------------------
 Began and finished site map
-
+============================================================
 ireneL -- 2017-11-15 13:16
 --------------------------
 Created page visions for Home, Start New Conversation, See Old Conversations, and Load Conversations (comes with corresponding example text and pictures)
@@ -51,6 +51,11 @@ Created page visions for Home, Start New Conversation, See Old Conversations, an
 shannonL -- 2017-11-15 13:46
 --------------------------
 Almost completed component map, finished task assignments
+============================================================
+ireneL -- 2017-11-16 13:10
+--------------------------
+- Added examples to database schema
+- Modified pictures in page vision to correspond with updates (user simultaneously sees both the old gif and continuously updating one)
 
 shannonL -- 2017-11-16 13:19
 --------------------------
@@ -59,7 +64,7 @@ Pushed devlog
 shannonL -- 2017-11-16 22:16
 --------------------------
 Finished design doc officially
-
+============================================================
 shannonL -- 2017-11-19 22:04
 --------------------------
 Updated component map with corrected arrow
@@ -67,6 +72,10 @@ Updated component map with corrected arrow
 shannonL -- 2017-11-19 22:20
 --------------------------
 Added possibility of a navigation bar to the design document
+============================================================
+ireneL -- 2017-11-21 13:10
+--------------------------
+Created templates base.html and home.html
 
 shannonL -- 2017-11-21 13:55
 --------------------------
@@ -77,3 +86,14 @@ Keep test.html until done testing
 shannonL -- 2017-11-21 20:08
 --------------------------
 Changed team roles in design doc: Irene to focus on website functionality, Adam on styling/Foundation/CSS
+============================================================
+ireneL -- 2017-11-22 01:36
+--------------------------
+- Created and tested database.py
+    - Sets up a database with headers id (autoincremented), time, message log, and gif url
+    - Method to create a new row (thread) within database, given the message log and gif url; timestamp is also determined here
+    - Accessor method to get a row (thread) with a try-except block to catch potential errors
+- Working on base.html and home.html
+    - Began writing navbar functionality in base.html, currently only implemented in home.html
+    - Created Base.html on the basis of inheritance
+- Added temporary logo photo

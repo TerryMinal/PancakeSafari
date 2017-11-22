@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    {% block bg %}
+    <style>
+      body {
+      margin:0;
+      background-color:#F5B039;
+      }
+      #navbar-primary .navbar-nav {
+        width: 100%;
+      }
+    </style>
+    {% endblock %}
+  </head>
+
+  <body bgcolor="#F5B039">
+    {% block navbar %}
+<div class="row">
+    <div class="large-3 columns">
+        <img src="logo.jpg">
+    </div>
+    <!-- Nav -->
+    <section class="top-bar-section">
+        <ul class="left">
+            <li class="divider"></li>
+            <li class="active"><a href="#">About</a></li>
+            <li class="divider"></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Calendar</a></li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Class by Age</a>
+                <ul class="dropdown">
+                    <li><label>Class by Age</label></li>
+                    <li><a href="#">Dropdown Level 3a</a></li>
+                    <li><a href="#">Dropdown Level 3b</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Dropdown Level 3c</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Class by Genra</a>
+                <ul class="dropdown">
+                    <li><label>Class by Genra</label></li>
+                    <li><a href="#">Dropdown Level 3a</a></li>
+                    <li><a href="#">Dropdown Level 3b</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Dropdown Level 3c</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Class by Season</a>
+                <ul class="dropdown">
+                    <li><label>Class by Season</label></li>
+                    <li><a href="#">Dropdown Level 3a</a></li>
+                    <li><a href="#">Dropdown Level 3b</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Dropdown Level 3c</a></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+        </ul>
+    </section>
+
+
+    {% endblock %}
+
+    {% set msgs = get_flashed_messages() %}
+    {% for message in msgs %}
+    {{message}}
+    {% endfor %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <br><br>
+
+    {% block footer %}
+    {% endblock %}
+
+
+  </body>
+</html>
