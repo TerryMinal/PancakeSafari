@@ -72,4 +72,8 @@ shannonL -- 2017-11-21 13:55
 --------------------------
 Tested GIPHY API in giphy.py and test.html
 Works - however, be careful of parsing through the JSON because of many nested dictionaries
-Keep test.html until done testing 
+Keep test.html until done testing
+
+shannonL -- 2017-11-21 20:08
+--------------------------
+Changed team roles in design doc: Irene to focus on website functionality, Adam on styling/Foundation/CSS
