@@ -9,7 +9,7 @@ import sqlite3, random  # enable control of an sqlite database
 import hashlib
 from time import gmtime, strftime
 
-
+#opens a database
 def open_db():
     global db
     f = "database.db"
@@ -17,14 +17,14 @@ def open_db():
     # c = db.cursor()    #facilitate db ops
     return
 
-
+#closes the database
 def close():
     global db
     db.commit()  # save changes
     db.close()  # close database
     return
 
-
+#sets up the database
 def db_setup():
     global db
     open_db()
@@ -37,6 +37,7 @@ def db_setup():
     close()
     return
 
+#adds a new entry into the table with a given conversation log and a gif url
 def create_thread(input_log, input_url):
     global db
     try:
@@ -52,7 +53,7 @@ def create_thread(input_log, input_url):
         return False
     return True
 
-
+#gets a specific thread given a index
 def get_thread(index):
     global db
     try:
@@ -70,12 +71,15 @@ def get_thread(index):
         return False
     return True
 
-db_setup()
-create_thread('"text":"Today was a happy day"',
+
+
+if __name__ == "__main__":
+    db_setup()
+    create_thread('"text":"Today was a happy day"',
               "https://i.pinimg.com/736x/de/c5/d1/dec5d1d75fa4333d771e6fed6c97c958--dessin-ghibli-ghibli-watercolor.jpg")
-create_thread('"text":"Today was another happy day"',
+    create_thread('"text":"Today was another happy day"',
               "https://i.pinimg.com/736x/de/c5/d1/dec5d1d75fa4333d771e6fed6c97c958--dessin-ghibli-ghibli-watercolor.jpg")
-create_thread('"text":"I hope it continues to be like this"',
+    create_thread('"text":"I hope it continues to be like this"',
               "https://i.pinimg.com/736x/de/c5/d1/dec5d1d75fa4333d771e6fed6c97c958--dessin-ghibli-ghibli-watercolor.jpg")
-get_thread(1)
-get_thread(3)
+    get_thread(1)
+    get_thread(3)
