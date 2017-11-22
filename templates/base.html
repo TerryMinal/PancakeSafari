@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
+      <link rel="stylesheet" href="foundation-6/css/foundation.css">
+    <link rel="stylesheet" href="foundation-6/css/app.css">
     {% block bg %}
     <style>
-      body {
-      margin:0;
-      background-color:#F5B039;
-      }
-      #navbar-primary .navbar-nav {
-        width: 100%;
-      }
+        .topbar-center-logo {
+          background: #2c3840;
+        }
+
+        .topbar-center-logo .menu {
+          background: #2c3840;
+        }
+
+        .topbar-center-logo .menu a {
+          color: #fefefe;
+        }
+
+        .topbar-center-logo .top-bar-center {
+          -webkit-flex: 1 0 auto;
+              -ms-flex: 1 0 auto;
+                  flex: 1 0 auto;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+          .topbar-center-logo .top-bar-center {
+            display: none;
+          }
+        }
+
     </style>
     {% endblock %}
   </head>
 
   <body bgcolor="#F5B039">
     {% block navbar %}
-<div class="row">
+    <!--
+    <div class="row">
     <div class="large-3 columns">
         <img src="logo.jpg">
     </div>
+    -->
     <!-- Nav -->
+    <!--
     <section class="top-bar-section">
         <ul class="left">
             <li class="divider"></li>
@@ -64,7 +88,23 @@
             <li class="divider"></li>
         </ul>
     </section>
+    -->
+    <div class="top-bar topbar-center-logo" id="topbar-center-logo">
+  <div class="top-bar-left">
+    <ul class="menu vertical medium-horizontal">
+      <li><a href="#">Create New Conversation</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-center">
+    <a href="#"><img src="logo.jpg" alt="logo" /></a>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu vertical medium-horizontal">
+      <li><a href="#">See Old Conversation</a></li>
 
+    </ul>
+  </div>
+</div>
 
     {% endblock %}
 
