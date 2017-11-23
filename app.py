@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, Markup
 import urllib2, json, random, os
-from util import database
+from util import database, misc
 
 app = Flask(__name__)
 app.secret_key = os.urandom(128)

@@ -8,11 +8,11 @@ global db
 import sqlite3, random  # enable control of an sqlite database
 import hashlib
 from time import gmtime, strftime
-
+import os
 #opens a database
 def open_db():
     global db
-    f = "database.db"
+    f = os.path.abspath("database.db")
     db = sqlite3.connect(f, check_same_thread=False)  # open if f exists, otherwise create
     # c = db.cursor()    #facilitate db ops
     return

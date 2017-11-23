@@ -97,3 +97,9 @@ ireneL -- 2017-11-22 01:36
     - Began writing navbar functionality in base.html, currently only implemented in home.html
     - Created Base.html on the basis of inheritance
 - Added temporary logo photo
+============================================================
+TerryG -- 2017-11-23 9:36
+- Created data folder and edited database.py to make the db in path data/database.db
+- created keys.txt
+- wrote function to parse for keys in keys.txt
+- added absolute paths to database.py and misc.py
