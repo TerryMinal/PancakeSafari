@@ -4,7 +4,7 @@ import os
 # returns a dictionary with format {API NAME: API KEY}
 def get_keys():
     d = {}
-    with open(os.path.abspath("keys.txt"), "rU") as f: #uses absolute path given 
+    with open(os.path.abspath("keys.txt"), "rU") as f: #uses absolute path given
         for line in f:
             a = line.strip().replace(" ", "").split(":")
             # first gets rid of any leading/trailing characters, then gets rid of all whitesplace, then makes

@@ -102,4 +102,3 @@ TerryG -- 2017-11-23 9:36
 - Created data folder and edited database.py to make the db in path data/database.db
 - created keys.txt
 - wrote function to parse for keys in keys.txt
-- added absolute paths to database.py and misc.py

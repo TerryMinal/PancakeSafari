@@ -12,7 +12,8 @@ import os
 #opens a database
 def open_db():
     global db
-    f = os.path.abspath("database.db")
+    f = "database.db"
+    print f
     db = sqlite3.connect(f, check_same_thread=False)  # open if f exists, otherwise create
     # c = db.cursor()    #facilitate db ops
     return
