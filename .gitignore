@@ -106,3 +106,4 @@ ENV/
 keys.txt
 .gitignore
 .DS_Store
+*.db
