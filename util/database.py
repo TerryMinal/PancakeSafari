@@ -8,21 +8,20 @@ global db
 import sqlite3, random  # enable control of an sqlite database
 import hashlib
 from time import gmtime, strftime
-
-
+import os
+#opens a database
 def open_db():
     global db
     f = "database.db"
     db = sqlite3.connect(f, check_same_thread=False)  # open if f exists, otherwise create
     return
 
-
+#closes the database
 def close():
     global db
     db.commit()  # save changes
     db.close()  # close database
     return
-
 
 def db_count():
     global db
@@ -50,6 +49,7 @@ def db_setup(): # sets up initial database
     close()
     return
 
+
 def create_thread(id, input_log, input_url): # creates a new row (thread) within the database
     global db
     try:
@@ -65,7 +65,7 @@ def create_thread(id, input_log, input_url): # creates a new row (thread) within
         return False
     return True
 
-
+#gets a specific thread given a index
 def get_thread(index):
     global db
     try:
@@ -99,7 +99,6 @@ def update_thread(index, new_message):
         print "Error updating thread"
         return False
     return True
-
 
 def get_all_threads():
     global db

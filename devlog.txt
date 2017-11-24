@@ -109,7 +109,6 @@ TerryG -- 2017-11-23 9:36
 - Created data folder and edited database.py to make the db in path data/database.db
 - created keys.txt
 - wrote function to parse for keys in keys.txt
-============================================================
 ireneL -- 2017-11-24 02:32
 --------------------------
 - Database.py modifications
@@ -127,3 +126,4 @@ ireneL -- 2017-11-24 02:32
 - Updated Zone of Reflection
 ============================================================
 
+=======
