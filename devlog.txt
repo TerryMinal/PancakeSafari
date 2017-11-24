@@ -30,9 +30,12 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Functionality to update the message log of a thread within database as opposed to storing the thread at the end of the conversation
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Make sure you have a database open before execution (Check the methods called within methods!)
+- Debugging probably could have gone a lot faster not done past midnight
 
 ============================================================
 shannonL -- 2017-11-13 13:37
@@ -97,3 +100,30 @@ ireneL -- 2017-11-22 01:36
     - Began writing navbar functionality in base.html, currently only implemented in home.html
     - Created Base.html on the basis of inheritance
 - Added temporary logo photo
+
+ireneL -- 2017-11-22 13:05
+--------------------------
+Modified navbar to link pages (links create conversation and view old conversation and home)
+============================================================
+TerryG -- 2017-11-23 9:36
+- Created data folder and edited database.py to make the db in path data/database.db
+- created keys.txt
+- wrote function to parse for keys in keys.txt
+============================================================
+ireneL -- 2017-11-24 02:32
+--------------------------
+- Database.py modifications
+    - Update thread functionality--Automatically retrieves the thread in question and adds to the message log for a certain thread (denoted by the id) given the new message
+    - ID changed from autoincrement to integer (see mid-development design changes)
+- Created form for "Create New Conversation"
+    - Creates a thread upon clicking submit
+    - Added new route in app.py accordingly (insert_msg) to create the thread
+- Showcases all conversations in "See Old Conversation"
+    - Created new method in database.py to retrieve all threads
+    - Modified old_convo.html to print all conversations as a separate table, displaying the ID, text, and corresponding photo (to be replaced with gif)
+    - Modified route for old conversation in app.py accordingly
+- Everything tested and debugged + resolved merge conflicts
+- Database.py commented
+- Updated Zone of Reflection
+============================================================
+
