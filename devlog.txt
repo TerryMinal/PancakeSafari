@@ -31,7 +31,8 @@ COOL STUFF LEARNED
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Functionality to update the message log of a thread within database as opposed to storing the thread at the end of the conversation
-
+- Need to hash urls
+- Need to use AJAX
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Make sure you have a database open before execution (Check the methods called within methods!)
@@ -106,9 +107,11 @@ ireneL -- 2017-11-22 13:05
 Modified navbar to link pages (links create conversation and view old conversation and home)
 ============================================================
 TerryG -- 2017-11-23 9:36
+--------------------------
 - Created data folder and edited database.py to make the db in path data/database.db
 - created keys.txt
 - wrote function to parse for keys in keys.txt
+--------------------------
 ireneL -- 2017-11-24 02:32
 --------------------------
 - Database.py modifications
@@ -125,5 +128,7 @@ ireneL -- 2017-11-24 02:32
 - Database.py commented
 - Updated Zone of Reflection
 ============================================================
-
-=======
+TerryG -- 2017-11-25 10:00 AM
+--------------------------
+- Added routes for cleverbot updating
+- Reminder: need to implement AJAX and make convo.html
