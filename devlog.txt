@@ -132,3 +132,9 @@ TerryG -- 2017-11-25 10:00 AM
 --------------------------
 - Added routes for cleverbot updating
 - Reminder: need to implement AJAX and make convo.html
+============================================================
+TerryG -- 2017-11-26 1:00 PM
+--------------------------
+- Added JQuery for chatting
+- Finished and debugged all routes
+- Finished Cleverbot functionality
