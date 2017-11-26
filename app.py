@@ -30,4 +30,4 @@ def old():
 if __name__ == "__main__":
     database.db_setup()
     app.debug = True
-    app.run(port=8081)
+    app.run()

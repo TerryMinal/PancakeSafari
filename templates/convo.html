@@ -2,12 +2,42 @@
 {% block title %}
     Old Conversations
 {% endblock %}
+{% block head %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% endblock %}
+
 {% block content %}
-    {% for message in name %}
-    <table border="1">
-        <tr><d>{{message[0]}}</td>
-            <td>{{message[2]}}</td>
-            <td><img src="{{message[3]}}" style="width:100px;height:120px;"></td></tr>
-    </table>
-    {% endfor %}
+
+<div id="chat">
+
+</div>
+
+<form name="msg" id="msg">
+      <input name="clever_input" type="text" id="clever_input">
+      <input name="conv_id" type="hidden" value="{{conv_id}}">
+      <input name="cs" type="hidden" value="{{cs}}">
+      <input name="submit_clever_input" type="submit" value="Send">
+</form>
+
+<script>
+$(document).ready(function() {
+  $(function() {
+    $('#msg').submit(function(e) {
+      e.preventDefault();
+      var data = $("#msg :input").serializeArray();
+      var i = $("#clever_input").val();
+      $("#chat").append("user: " + i + "<hr>");
+      $("#clever_input").val("");  //clears the text box
+      // console.log(data);
+      // passes get request to path clever_output and waits for a response
+      $.getJSON('/clever_output', data , function(data) {
+        // console.log(data);
+        $("#chat").append("bot: " + data.result + "<hr>");
+      });
+      return false;
+    });
+  });
+});
+</script>
+
 {% endblock %}
