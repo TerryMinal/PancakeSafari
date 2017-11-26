@@ -138,3 +138,4 @@ TerryG -- 2017-11-26 1:00 PM
 - Added JQuery for chatting
 - Finished and debugged all routes
 - Finished Cleverbot functionality
+- TO DO: fix update_thread() and adding old_convo
