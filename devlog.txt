@@ -139,3 +139,8 @@ TerryG -- 2017-11-26 1:00 PM
 - Finished and debugged all routes
 - Finished Cleverbot functionality
 - TO DO: fix update_thread() and adding old_convo
+============================================================
+AbbasA -- 2017-11-27 1:14 PM
+--------------------------
+- Made decision to use Bootstrap (not enough time to learn foundation)
+- Downloaded neccessary files, beginning the switch in css
