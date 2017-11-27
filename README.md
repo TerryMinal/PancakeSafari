@@ -8,20 +8,20 @@ Welcome to Clevergiph! In this site, we've fused the Cleverbot and Giphy APIs. V
 1. Procure API keys from [Cleverbot](https://www.cleverbot.com/api/) and [Giphy](https://developers.giphy.com)
 
 2. Clone the repository
-'''
+```
 $ git clone git@github.com:slau8/PancakeSafari.git
-'''
+```
 
 3. Change working directory into PancakeSafari
-'''
+```
 $ cd PancakeSafari
-'''
+```
 
-4. Add your API keys in their corresponding location in ''' keys.txt '''
+4. Add your API keys in their corresponding location in ``` keys.txt ```
 
 5. Run the application
-'''
+```
 $ python app.py
-'''
+```
 
-6. Navigate to '''localhost:5000''' and enjoy!
+6. Navigate to ```localhost:5000``` and enjoy!
