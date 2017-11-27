@@ -36,7 +36,16 @@ $ pip install requests
 ```
 
 #### Acquiring API Keys
-Procure API keys from [Cleverbot](https://www.cleverbot.com/api/) and [Giphy](https://developers.giphy.com)
+Procure your [Cleverbot](https://www.cleverbot.com/api/) API key:
+1. Add *API 5K Free Trial* to your cart.
+2. Fill out billing details, including name, email address, phone, address, and user password.
+3. Your key will appear after placing the order.
+
+For your [Giphy](https://developers.giphy.com):
+1. Click *Create an App*.
+2. Enter account credentials.
+3. Enter app name and description (CLEVERGIF, an application that generates GIFs wwhile chatting with Cleverbot)
+4. Your key will appear on your dashboard.
 
 #### Run It!
 1. Clone the repo by running:
@@ -49,9 +58,8 @@ $ cd PancakeSafari
 $ python app.py
 ```
 3. Add your API keys in their corresponding location in ``` keys.txt ```. For example:
-
 ```
 Cleverbot: abc123
 Giphy: def456
-
+```
 4. You can then view the webpage by opening the URL `localhost:5000` in a web browser.
