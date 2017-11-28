@@ -1,108 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <title>{% block title %} {% endblock %}</title>
+
     {% block head %}
     {% endblock %}
     {% block bg %}
-    <style>
-        .topbar-center-logo {
-          background: #2c3840;
-        }
 
-        .topbar-center-logo .menu {
-          background: #2c3840;
-        }
-
-        .topbar-center-logo .menu a {
-          color: #fefefe;
-        }
-
-        .topbar-center-logo .top-bar-center {
-          -webkit-flex: 1 0 auto;
-              -ms-flex: 1 0 auto;
-                  flex: 1 0 auto;
-        }
-
-        @media screen and (max-width: 39.9375em) {
-          .topbar-center-logo .top-bar-center {
-            display: none;
+      <style>
+          body{
+            background-color: #FF715B;
           }
-        }
+          .convolink{
+            color: #4C5454;
+            font-size: 200%;
+          }
+          .convolink:hover{
+            color: #F9F8F8;
+            text-decoration: none;
+          }
 
-    </style>
+      </style>
     {% endblock %}
   </head>
 
-  <body bgcolor="#F5B039">
+  <body>
+    <div class="container">
     {% block navbar %}
-    <!--
-    <div class="row">
-    <div class="large-3 columns">
-        <img src="logo.jpg">
-    </div>
-    -->
-    <!-- Nav -->
-    <!--
-    <section class="top-bar-section">
-        <ul class="left">
-            <li class="divider"></li>
-            <li class="active"><a href="#">About</a></li>
-            <li class="divider"></li>
-            <li><a href="/schedule.html">Schedule</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Calendar</a></li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="#">Class by Age</a>
-                <ul class="dropdown">
-                    <li><label>Class by Age</label></li>
-                    <li><a href="#">Dropdown Level 3a</a></li>
-                    <li><a href="#">Dropdown Level 3b</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Dropdown Level 3c</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="#">Class by Genra</a>
-                <ul class="dropdown">
-                    <li><label>Class by Genra</label></li>
-                    <li><a href="#">Dropdown Level 3a</a></li>
-                    <li><a href="#">Dropdown Level 3b</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Dropdown Level 3c</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><a href="#">Class by Season</a>
-                <ul class="dropdown">
-                    <li><label>Class by Season</label></li>
-                    <li><a href="#">Dropdown Level 3a</a></li>
-                    <li><a href="#">Dropdown Level 3b</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Dropdown Level 3c</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-        </ul>
-    </section>
-    -->
-    <div class="top-bar topbar-center-logo" id="topbar-center-logo">
-  <div class="top-bar-left">
-    <ul class="menu vertical medium-horizontal">
-      <li><a href="new">Create New Conversation</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-center">
-    <a href="/"><img src="logo.jpg" alt="logo" /></a>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu vertical medium-horizontal">
-      <li><a href="old">See Old Conversation</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Go Home</a>
+                </li>
 
-    </ul>
-  </div>
-</div>
+            </ul>
+        </div>
+    </nav>
 
     {% endblock %}
 
@@ -110,6 +45,8 @@
     {% for message in msgs %}
     {{message}}
     {% endfor %}
+
+    <br /><br />
 
 
     {% block content %}
@@ -121,6 +58,6 @@
     {% block footer %}
     {% endblock %}
 
-
+    </div>
   </body>
 </html>
