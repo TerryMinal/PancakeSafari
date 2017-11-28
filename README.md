@@ -13,7 +13,7 @@ Welcome to Clevergiph! In this site, we've fused the Cleverbot and Giphy APIs. V
 ## Launching the Program
 
 #### Installing Your Virtual Environment/Flask/Requests
-Flask needs to be installed in order to run this program. It is ideally stored in a virtual environment (venv). 
+Flask needs to be installed in order to run this program. It is ideally stored in a virtual environment (venv).
 
 To install a venv (with the name <name>), run these commands in your terminal:
 
@@ -31,8 +31,7 @@ $ . <name>/Script/activate
 ```
 In your activated venv, run the following:
 ```
-$ pip install flask
-$ pip install requests
+$ pip install -r requirements.txt
 ```
 
 #### Acquiring API Keys

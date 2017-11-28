@@ -144,3 +144,8 @@ AbbasA -- 2017-11-27 1:14 PM
 --------------------------
 - Made decision to use Bootstrap (not enough time to learn foundation)
 - Downloaded neccessary files, beginning the switch in css
+--------------------------
+TerryG -- 2017-11-26 1:00 PM
+- made requirements.txt
+- moved cleverbot to app.py
+- updated README
