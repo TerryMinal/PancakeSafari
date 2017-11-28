@@ -155,3 +155,11 @@ shannonL -- 2017-11-28 00:25
 - Fully functionable GIF generator based on user entry
 - Created in giphy.py, must be merged soon into app.py
 - Considering ways to make the keyword selection more time efficient
+
+abbasA -- 2017-11-28 11:40 AM
+- Chose a color scheme
+- Added bootstrap functionality to base.html
+  - And a background color
+  - Added a navbar
+- Fixed home.html, made buttons
+- Worked on form in create_new.html
