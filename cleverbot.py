@@ -35,12 +35,12 @@ def create_conv():
     cs = j["cs"] # cs is the conversation history parameter passed in the cleverbot url
     conv_id = j["conversation_id"]
     database.create_thread(conv_id, clever_output, "")
-    return redirect(url_for("conversation", conv_id = conv_id, cs = cs))
+    return redirect(url_for("conversation", conv_id = conv_id, cs = cs, clever_output = clever_output))
 
 # displays webpage
-@app.route("/conversation?conv_id=<conv_id>?cs=<cs>")
-def conversation(conv_id, cs):
-    return render_template("convo.html", conv_id = conv_id, cs = cs)
+@app.route("/conversation?conv_id=<conv_id>?cs=<cs>?initial_output=<clever_output>")
+def conversation(conv_id, cs, clever_output):
+    return render_template("convo.html", conv_id = conv_id, cs = cs, clever_output = clever_output)
 
 # responds to an ajax call that gives a user input and sends the outut of cleverbot
 @app.route("/clever_output")
@@ -53,6 +53,7 @@ def clever_output():
     print "\n\nit worked up to here\n"
     return jsonify(result=clever_output)
 
+    
 
 if __name__ == "__main__":
 	app.debug = True
