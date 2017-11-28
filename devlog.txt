@@ -149,3 +149,9 @@ TerryG -- 2017-11-26 1:00 PM
 - made requirements.txt
 - moved cleverbot to app.py
 - updated README
+
+shannonL -- 2017-11-28 00:25
+- Added fxn to convert blacklist.txt into a list that can be compared with each entry
+- Fully functionable GIF generator based on user entry
+- Created in giphy.py, must be merged soon into app.py
+- Considering ways to make the keyword selection more time efficient
