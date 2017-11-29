@@ -8,6 +8,8 @@ app.secret_key = os.urandom(128)
 API_KEYS = misc.get_keys()
 CLEVERBOT_KEY = API_KEYS["Cleverbot"]
 CLEVERBOT_BASE_URL = "https://www.cleverbot.com/getreply?key=" + CLEVERBOT_KEY
+GIPHY_KEY = API_KEYS["Giphy"]
+GIPHY_BASE_URL = "http://api.giphy.com/v1/gifs/search?api_key=" + GIPHY_KEY + "&limit=1&q="
 
 # root route // access and render NASA information
 @app.route("/")
@@ -20,6 +22,9 @@ def old():
 
 @app.route("/create_conv")
 def create_conv():
+    if CLEVERBOT_KEY == "" or GIPHY_KEY == "":
+        flash('API key(s) must be provided.')
+        return redirect(url_for('home'))
     c = requests.get(CLEVERBOT_BASE_URL)
     j = c.json()
     clever_output = j["output"]
