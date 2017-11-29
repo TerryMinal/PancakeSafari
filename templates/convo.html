@@ -14,12 +14,22 @@
   <hr>
 </div>
 
+<div id="old_pic">
+
+</div>
+
+<div id="div_new_pic">
+  <span id="new_pic"> </span>
+  <input name="choose_new" type="submit" value="Send">
+</div>
+
 <form name="msg" id="msg">
       <input name="clever_input" type="text" id="clever_input">
       <input name="conv_id" type="hidden" value="{{conv_id}}">
       <input name="cs" type="hidden" value="{{cs}}">
       <input name="submit_clever_input" type="submit" value="Send">
 </form>
+
 
 <script>
 $(document).ready(function() {
@@ -35,6 +45,7 @@ $(document).ready(function() {
       $.getJSON('/clever_output', data , function(data) {
         // console.log(data);
         $("#chat").append("Bot: " + data.result + "<hr>");
+        $("new_pic").replaceWith("<img src=" + data.gif + "height ='50' width='50' alt='new_pic'>");
       });
       return false;
     });
