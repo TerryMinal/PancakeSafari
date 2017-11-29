@@ -22,6 +22,7 @@ def old():
 
 @app.route("/create_conv")
 def create_conv():
+    # checks if API keys are available
     if CLEVERBOT_KEY == "" or GIPHY_KEY == "":
         flash('API key(s) must be provided.')
         return redirect(url_for('home'))
