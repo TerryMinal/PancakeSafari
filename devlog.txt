@@ -193,4 +193,14 @@ terryG, ireneL, shannonL -- 2017-11-28 13:16
 ireneL -- 2017-11-28 15:14
 --------------------------
 - Updated Zone of Reflection and made basic stylistic changes in devlog for consistency (e.g. 1:40 PM changed to 13:40, TerryG to terryG)
+
+adamA -- 2017-11-28 19:42
+--------------------------
+- Fixed navbar
+   - Now takes up full screen
+   - Added logo 
+- Fixed homepage
+   - Buttons inline
+   - Logo image
+
 ============================================================
