@@ -10,7 +10,7 @@
 
       <style>
           body{
-            background-color: #FF715B;
+            background-color: #F9F8F8;
           }
           .convolink{
             color: #4C5454;
@@ -20,37 +20,40 @@
             color: #F9F8F8;
             text-decoration: none;
           }
+          .nav_link{
+            color:#1EA896;
+          }
+          .nav_link:hover{
+              color:#3C91E6;
+              text-decoration: none;
+          }
 
       </style>
     {% endblock %}
   </head>
 
   <body>
-    <div class="container">
     {% block navbar %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Go Home</a>
-                </li>
-
-            </ul>
+    <nav class="navbar navbar-inverse bg-inverse" style="background-color:#4C5454;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand nav_link" href="/">PancakeSafari</a>
         </div>
+        <a href="#" class="pull-right"><img src="/static/imgs/CG.png" height="45px" width="45px"></a>
     </nav>
 
     {% endblock %}
+
 
     {% set msgs = get_flashed_messages() %}
     {% for message in msgs %}
     {{message}}
     {% endfor %}
 
-    <br /><br />
 
 
+    <div class="container">
     {% block content %}
-
     {% endblock %}
 
     <br><br>
