@@ -23,11 +23,18 @@
   <input name="choose_new" type="submit" value="Send">
 </div>
 
-<form name="msg" id="msg">
+<!-- <form name="msg" id="msg">
       <input name="clever_input" type="text" id="clever_input">
       <input name="conv_id" type="hidden" value="{{conv_id}}">
       <input name="cs" type="hidden" value="{{cs}}">
-      <input name="submit_clever_input" type="submit" value="Send">
+      <input name="submit_clever_input" type="submit" value="Send"> -->
+
+<form name="msg" id="msg" class="form-inline">
+      <input class = "form-control" name="clever_input" type="text" id="clever_input">
+      <input class = "form-control" name="conv_id" type="hidden" value="{{conv_id}}">
+      <input class = "form-control" name="cs" type="hidden" value="{{cs}}">
+      <button class = "btn btn-warning" name="submit_clever_input" value="Send"> Submit </button>
+
 </form>
 
 
