@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, flash, Markup
 import urllib2, json, random, os
 import requests
-from util import misc
+import misc
+
+blacklist = ['and', 'because', 'to', 'from', 'with', 'who', 'whom', 'come', 'get', 'give', 'go', 'keep', 'let', 'make', 'put', 'seem', 'take', 'be', 'do', 'have', 'may', 'will', 'about', 'across', 'after', 'among', 'at', 'before', 'between', 'by', 'in', 'off', 'on', 'over', 'through', 'to', 'under', 'up', 'down', 'as', 'for', 'of', 'till', 'than', 'a', 'the', 'all', 'any', 'many', 'every', 'ever', 'no', 'other', 'some', 'such', 'that', 'this', 'i', 'he', 'she', 'they', 'them', 'you', 'but', 'or', 'if', 'though', 'while', 'how', 'however', 'when', 'whenever', 'where', 'wherever', 'why', 'again', 'against', 'far', 'forward', 'further', 'farther', 'here', 'near', 'now', 'out', 'still', 'then', 'there', 'together', 'well', 'almost', 'enough', 'even', 'little', 'much', 'not', 'continuously', 'only', 'quite', 'so', 'very', 'tomorrow', 'yesterday', 'please', 'yes', 'none', 'less', 'more', 'what', 'whatever', 'too', 'therefore', 'thus', 'consequently', 'are', 'similarly', 'additionally', 'furthermore', 'thereby', 'likewise', 'despite', 'regardless', 'notwithstanding', 'nonetheless', 'nevertheless', 'is', 'can']
 
 API_KEYS = misc.get_keys()
 GIPHY_KEY = API_KEYS["Cleverbot"]
@@ -49,8 +51,6 @@ def retrieve_data(url):
     data = requests.get(url)
     d = data.json()
     return d
-
-blacklist = generate_blacklist()
 
 if __name__ == "__main__":
     print blacklist
