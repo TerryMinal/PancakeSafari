@@ -11,32 +11,15 @@ CLEVERBOT_BASE_URL = "https://www.cleverbot.com/getreply?key=" + CLEVERBOT_KEY
 GIPHY_KEY = API_KEYS["Giphy"]
 GIPHY_BASE_URL = "http://api.giphy.com/v1/gifs/search?api_key=" + GIPHY_KEY + "&limit=1&q="
 
-# root route to home page
+# root route // access and render NASA information
 @app.route("/")
 def home():
     return render_template("home.html")
 
-# route to old conversations page
 @app.route("/old")
 def old():
-    threads = database.get_all_threads()
-    count = 0
-    content = ""
-    for thread in threads:
-        if count % 3 == 0:
-            content += "<div class='row'>"
-        count = count + 1
-        content += "<div class='col-lg-4'><table class='table' border='2'>"
-        content += "<tr><td><img src=" + thread[3] + " width=100%></td></tr>"
-        content += "<tr><td>" + thread[2] + "</td></tr>"
-        content += "</table></div>"
-        if count == 3:
-            content += "</div>"
-            count = 0
-    #return render_template("old_convo.html", name=database.get_all_threads())
-    return render_template("old_convo.html", content=Markup(content))
+    return render_template("old_convo.html", name=database.get_all_threads())
 
-# creates conversation and route to new conversation page
 @app.route("/create_conv")
 def create_conv():
     # checks if API keys are available
@@ -53,7 +36,7 @@ def create_conv():
     database.create_thread(conv_id, clever_output, "")
     return redirect(url_for("conversation", conv_id = conv_id, cs = cs, clever_output = clever_output))
 
-# displays new conversation webpage
+# displays webpage
 @app.route("/conversation?conv_id=<conv_id>?cs=<cs>?initial_output=<clever_output>")
 def conversation(conv_id, cs, clever_output):
     return render_template("convo.html", conv_id = conv_id, cs = cs, clever_output = clever_output)
@@ -68,18 +51,21 @@ def clever_output():
     # print "\n" + clever_params["cs"] + "\n"
     # print clever_params["input"]
     user_input = clever_params["input"]
-
-    # Updates the thread within the database by appending new lines
     database.update_thread(clever_params["conv_id"], "user: " + user_input)
     database.update_thread(clever_params["conv_id"], "cleverbot: " + clever_output)
-
-    # Gif URL
+    # print gif_array[0]
     gif_array = giphy.search_gif(user_input + " " + clever_output)
-
-    # Updates the gif in the thread
-    database.update_image(clever_params["conv_id"], gif_array[0])
-    #print gif_array[0]
+    print gif_array[0]
     return jsonify(result=clever_output, gif=gif_array[0],cs=j["cs"])
+
+@app.route("/save_gif")
+def save_gif():
+    conv_id = request.args.get("conv_id")
+    image = request.args.get("image")
+    print "conv_id", conv_id
+    print "image:", image
+    database.update_image(conv_id, image)
+    return jsonify(conv_id=conv_id, image=image);
 
 if __name__ == "__main__":
     database.db_setup()

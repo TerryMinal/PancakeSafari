@@ -30,6 +30,7 @@
     <img id="new_pic" src="" width="50%" alt="">
     <br />
     <form id="choose_new">
+      <input id="conv_id" class = "form-control" name="conv_id" type="hidden" value="{{conv_id}}">
       <input class="btn btn-warning" type="submit" value="Save GIF">
     </form>
   </div>
@@ -88,7 +89,11 @@ $(document).ready(function() {
   $(function() {
   $('#choose_new').submit(function(e) {
     e.preventDefault();
+    var conv_id = $("#conv_id").val();
+    var d = {conv_id: conv_id, image: image};
+    console.log(d);
     $("#old_pic").attr("src", image);
+    $.get("/save_gif", d);
     });
   });
 });
