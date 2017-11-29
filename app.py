@@ -18,8 +18,26 @@ def home():
 
 @app.route("/old")
 def old():
-    print database.get_all_threads()
-    return render_template("old_convo.html", name=database.get_all_threads())
+    threads = database.get_all_threads()
+    count = 0
+    content = ""
+
+    for thread in threads:
+
+        if count % 3 == 0:
+            content += "<div class='row'>"
+            count = count + 1
+        content += "<div class='col-lg-4'><table class='table' border='2'>"
+        content += "<tr><td><img src=" + thread[3] + " width=100%></td></tr>"
+        content += "<tr><td>" + thread[2] + "</td></tr>"
+        content += "</table></div>"
+
+        if count == 3:
+            content += "</div>"
+            count = 0
+          # return render_template("old_convo.html", name=database.get_all_threads())
+
+    return render_template("old_convo.html", content=Markup(content))
 
 @app.route("/create_conv")
 def create_conv():
