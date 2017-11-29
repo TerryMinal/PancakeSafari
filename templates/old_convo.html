@@ -1,14 +1,29 @@
 {% extends "base.html" %}
+{% set count = 0 %}
 {% block title %}
     Old Conversations
 {% endblock %}
 {% block content %}
-    {% for message in name %}
-    <table border="1">
-        <tr><td>{{message[0]}}</td>
-            <td>{{message[2]}}</td>
-            <td><img src="{{message[3]}}" style="width:100px;height:120px;"></td></tr>
-    </table>
-    <br> 
-    {% endfor %}
+<div style="margin-top: 5%;margin-left:10%;margin-right:10%">
+{{ content }}
+</div>
+    <!--{% for message in name %}
+        {{count}}
+        {% if count % 3 == 0 %}
+            <div class="row">
+        {% endif %}
+        {% set count = count + 1 %}
+        {{ count }}
+        <div class="col-lg-4">
+            <table class="table" border="1">
+                <tr><td><img src={{message[3]}} width=100%></td></tr>
+                <tr><td>{{message[2]}}</td><tr>
+                </table>
+        </div>
+        {% if count == 3 %}
+            </div>
+            {% set count = 0 %}
+        {% endif %}
+        {{ count }}
+    {% endfor %}-->
 {% endblock %}
