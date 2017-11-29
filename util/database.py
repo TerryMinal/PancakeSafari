@@ -89,7 +89,7 @@ def update_thread(index, new_message):
         curr_message = get_thread(index) # receives old thread
         #print "im here"
         # using , as delimiter
-        mess = curr_message + "; " + new_message # new thread trimmed and appended accordingly
+        mess = curr_message + "<br>" + new_message # new thread trimmed and appended accordingly
         print mess
         open_db()
         c = db.cursor()
