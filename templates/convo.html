@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="row">
+<div class="col-lg-8">
 <div id="chat">
   {{ clever_output }}
   <hr>
@@ -40,5 +41,15 @@ $(document).ready(function() {
   });
 });
 </script>
+</div>
+<!--
+<div class="col-lg-4">
+  <p>Featured GIF: <b>{{ keyword }}</b></p>
+  <img src={{new_gif}} width=100%>
+  <p><i>Current GIF:
+  <img src={{saved_gif}} width=50%>
+</div>-->
+</div>
+
 
 {% endblock %}
