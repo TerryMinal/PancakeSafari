@@ -25,7 +25,7 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- The first CleverBot response is extremely slow
+- <No news is good news>
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,10 +65,6 @@ ireneL -- 2017-11-16 13:10
 --------------------------
 - Added examples to database schema
 - Modified pictures in page vision to correspond with updates (user simultaneously sees both the old gif and continuously updating one)
-
-shannonL -- 2017-11-16 13:19
---------------------------
-Pushed devlog
 
 shannonL -- 2017-11-16 22:16
 --------------------------
@@ -202,16 +198,29 @@ adamA -- 2017-11-28 19:42
 - Fixed homepage
    - Buttons inline
    - Logo image
+   
 terryG -- 2017-11-28 21:00
 --------------------------
 - Added functioning giphy API to webpage
 - updated ajax to update pictures
 - fixed cleverbot route issues
-- 
+
 ============================================================
 ireneL -- 2017-11-29 01:13
 --------------------------
 - Changed ID PRIMARY KEY in database from an integer to string (TEXT) based on cleverbot's ID
 - Added update_image method in database to allow saved images to update when displayed
 - Resolved issues regarding updating the thread (i.e. different IDs for the same conversation)
+- Fixed syntax of responses when viewing old conversations
 - Database.py and code relating to databases commented
+- Default gif (404) given (resolves issue where the user finishes the conversation right after starting aka doesn't type any comments and hence doesn't have a gif)
+- Database.py and code relating to databases commented
+
+shannonL -- 2017-11-29 02:11
+--------------------------
+- Updated giphy.py as a util file, including functionality for obtaining API key
+- API key checker in app.py; flashes "API key(s) not found" when they are not in keys.text
+- Made old_convo.html more robust and formatted through app.py
+- Added "finish conversation button" and its route
+- Designed 2 logos for the home page and navbar
+- Fixed convo.html for consistent front-end and clear viewability
