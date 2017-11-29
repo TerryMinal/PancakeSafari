@@ -21,18 +21,23 @@ firstL -- TIMESTAMP
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Displays all conversations without creating another database
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The first CleverBot response is extremely slow
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Meshing APIs to create a viable + entertaining website
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Functionality to update the message log of a thread within database as opposed to storing the thread at the end of the conversation
 - Need to hash urls
 - Need to use AJAX
+- Foundation to Bootstrap (easier to learn, more online support, time constraints)
+
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Make sure you have a database open before execution (Check the methods called within methods!)
@@ -106,7 +111,7 @@ ireneL -- 2017-11-22 13:05
 --------------------------
 Modified navbar to link pages (links create conversation and view old conversation and home)
 ============================================================
-TerryG -- 2017-11-23 9:36
+terryG -- 2017-11-23 9:36
 --------------------------
 - Created data folder and edited database.py to make the db in path data/database.db
 - created keys.txt
@@ -128,38 +133,74 @@ ireneL -- 2017-11-24 02:32
 - Database.py commented
 - Updated Zone of Reflection
 ============================================================
-TerryG -- 2017-11-25 10:00 AM
+terryG -- 2017-11-25 10:00
 --------------------------
 - Added routes for cleverbot updating
 - Reminder: need to implement AJAX and make convo.html
 ============================================================
-TerryG -- 2017-11-26 1:00 PM
+terryG -- 2017-11-26 13:00
 --------------------------
 - Added JQuery for chatting
 - Finished and debugged all routes
 - Finished Cleverbot functionality
 - TO DO: fix update_thread() and adding old_convo
+
+ireneL -- 2017-11-26 19:40
+--------------------------
+- Added prepositions and conjunctions to the blacklist
 ============================================================
-AbbasA -- 2017-11-27 1:14 PM
+ireneL -- 2017-11-27 13:05
+--------------------------
+-Updated README with summary/context of site and directions
+
+adamA -- 2017-11-27 13:14
 --------------------------
 - Made decision to use Bootstrap (not enough time to learn foundation)
 - Downloaded neccessary files, beginning the switch in css
+
+terryG -- 2017-11-27 13:00
 --------------------------
-TerryG -- 2017-11-26 1:00 PM
 - made requirements.txt
 - moved cleverbot to app.py
 - updated README
 
+ireneL -- 2017-11-27 22:27
+--------------------------
+- Modified database (update_thread) to include user/bot (used for display purposes)
+============================================================
 shannonL -- 2017-11-28 00:25
+--------------------------
 - Added fxn to convert blacklist.txt into a list that can be compared with each entry
 - Fully functionable GIF generator based on user entry
 - Created in giphy.py, must be merged soon into app.py
 - Considering ways to make the keyword selection more time efficient
 
-abbasA -- 2017-11-28 11:40 AM
+adamA -- 2017-11-28 11:40
+--------------------------
 - Chose a color scheme
 - Added bootstrap functionality to base.html
   - And a background color
   - Added a navbar
 - Fixed home.html, made buttons
 - Worked on form in create_new.html
+
+terryG, ireneL, shannonL -- 2017-11-28 13:16
+--------------------------
+- Removed unused methods, imported packages, and the like
+- Fixed issue regarding button linkage for "Create New Conversation"
+- Cleverbot routes tested and debugged
+
+ireneL -- 2017-11-28 15:14
+--------------------------
+- Updated Zone of Reflection and made basic stylistic changes in devlog for consistency (e.g. 1:40 PM changed to 13:40, TerryG to terryG)
+
+adamA -- 2017-11-28 19:42
+--------------------------
+- Fixed navbar
+   - Now takes up full screen
+   - Added logo 
+- Fixed homepage
+   - Buttons inline
+   - Logo image
+
+============================================================

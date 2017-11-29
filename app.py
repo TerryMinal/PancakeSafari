@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash, Markup, url_for
+from flask import Flask, render_template, request, redirect, flash, Markup, url_for, jsonify
 import requests, os
 from util import database, misc
 
@@ -41,7 +41,11 @@ def clever_output():
     c = requests.get(CLEVERBOT_BASE_URL, params=clever_params)
     j = c.json()
     clever_output = j["output"]
-    # database.update_thread(request.form["conv_id"], clever_output)
+    # print "\n" + clever_params["cs"] + "\n"
+    # print clever_params["input"]
+    user_input = "user: " + clever_params["input"]
+    database.update_thread(clever_params["cs"], user_input)
+    database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
     return jsonify(result=clever_output)
 
 if __name__ == "__main__":

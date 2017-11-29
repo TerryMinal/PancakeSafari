@@ -4,11 +4,8 @@
 #P01 -- ArRESTed Development
 
 global db
-# from flask import flash
-import sqlite3, random  # enable control of an sqlite database
-import hashlib
-from time import gmtime, strftime
-import os
+
+import sqlite3  # enable control of an sqlite database
 #opens a database
 def open_db():
     global db
