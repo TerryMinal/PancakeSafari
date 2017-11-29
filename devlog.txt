@@ -25,7 +25,7 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- The first CleverBot response is extremely slow
+- Creating a newline in sqlite
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,4 +214,5 @@ ireneL -- 2017-11-29 01:13
 - Changed ID PRIMARY KEY in database from an integer to string (TEXT) based on cleverbot's ID
 - Added update_image method in database to allow saved images to update when displayed
 - Resolved issues regarding updating the thread (i.e. different IDs for the same conversation)
+- Fixed syntax of responses when viewing old conversations
 - Database.py and code relating to databases commented
