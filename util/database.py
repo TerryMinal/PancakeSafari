@@ -109,7 +109,7 @@ def update_image(index, gif_url):
         c = db.cursor()
         c.execute("UPDATE threads SET gif_url = ? WHERE id = ?", (gif_url, index,))
         close()
-        print "update successful"
+        print "update image successful"
     except:
         print "Error updating image"
         return False
