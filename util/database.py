@@ -39,7 +39,7 @@ def db_setup(): # sets up initial database
     open_db()
     c = db.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS threads (
-        id INTEGER PRIMARY KEY,
+        id TEXT PRIMARY KEY,
         time DEFAULT CURRENT_TIMESTAMP NOT NULL,
         message_log TEXT NOT NULL,
         gif_url TEXT NOT NULL)''')
@@ -48,8 +48,8 @@ def db_setup(): # sets up initial database
 
 
 def create_thread(id, input_log, input_url): # creates a new row (thread) within the database
-    global db
-    try:
+        global db
+    #try:
         open_db()
         c = db.cursor()
         command = '''INSERT INTO threads
@@ -57,10 +57,11 @@ def create_thread(id, input_log, input_url): # creates a new row (thread) within
         # print command
         c.execute(command, (id, input_log, input_url,))      # input_log and input_url are from user/db
         close()
-    except:
-        print "Error creating thread"
-        return False
-    return True
+    #except Exception as e:
+    #    print e
+    #    print "Error creating thread"
+    #    return False
+        return True
 
 #gets a specific thread given a index
 def get_thread(index):
