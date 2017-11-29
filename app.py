@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, Markup, url_for, jsonify
 import requests, os
-from util import database, misc
+from util import database, misc, giphy
 
 app = Flask(__name__)
 app.secret_key = os.urandom(128)
@@ -29,10 +29,11 @@ def create_conv():
     c = requests.get(CLEVERBOT_BASE_URL)
     j = c.json()
     clever_output = j["output"]
-    clever_output = "cleverbot: " + clever_output + ","
+    clever_output = "cleverbot: " + clever_output
     cs = j["cs"] # cs is the conversation history parameter passed in the cleverbot url
+    # print "\n" + cs + "\n"
     conv_id = j["conversation_id"]
-    database.create_thread(conv_id, clever_output, "")
+    # database.create_thread(conv_id, clever_output, "")
     return redirect(url_for("conversation", conv_id = conv_id, cs = cs, clever_output = clever_output))
 
 # displays webpage
@@ -49,10 +50,13 @@ def clever_output():
     clever_output = j["output"]
     # print "\n" + clever_params["cs"] + "\n"
     # print clever_params["input"]
-    user_input = "user: " + clever_params["input"]
-    database.update_thread(clever_params["cs"], user_input)
-    database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
-    return jsonify(result=clever_output)
+    user_input = clever_params["input"]
+    # database.update_thread(clever_params["cs"], "user: " + user_input)
+    # database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
+    # print gif_array[0]
+    gif_array = giphy.search_gif(user_input + clever_output)
+    print gif_array[0]
+    return jsonify(result=clever_output, gif=gif_array[0])
 
 if __name__ == "__main__":
     database.db_setup()

@@ -39,6 +39,8 @@
 
 
 <script>
+// function to update chat
+var image;
 $(document).ready(function() {
   $(function() {
     $('#msg').submit(function(e) {
@@ -52,11 +54,20 @@ $(document).ready(function() {
       $.getJSON('/clever_output', data , function(data) {
         // console.log(data);
         $("#chat").append("Bot: " + data.result + "<hr>");
-        $("new_pic").replaceWith("<img src=" + data.gif + "height ='50' width='50' alt='new_pic'>");
+        image = data.gif;
+        console.log(image);
+        $("#new_pic").replaceWith("<img src=' " + image + " ' height ='50' width='50' alt='new picture for you'>");
       });
       return false;
     });
   });
+});
+
+// function to select new favorite image
+$(document).ready(function() {
+  $('#choose_new').bind('click', function(e) {
+    $("#old_pic").replaceWith("<img src=' " + image + " ' height ='50' width='50' alt='new_pic'>");
+});
 });
 </script>
 </div>

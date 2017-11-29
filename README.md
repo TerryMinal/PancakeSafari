@@ -33,7 +33,11 @@ In your activated venv, run the following:
 ```
 $ pip install -r requirements.txt
 ```
-
+If that method does not work try installing the packages separately
+```
+$ pip install flask
+$ pip install requests
+```
 #### Acquiring API Keys
 Procure your [Cleverbot](https://www.cleverbot.com/api/) API key:
 1. Add *API 5K Free Trial* to your cart.
