@@ -33,7 +33,7 @@ def create_conv():
     cs = j["cs"] # cs is the conversation history parameter passed in the cleverbot url
     # print "\n" + cs + "\n"
     conv_id = j["conversation_id"]
-    # database.create_thread(conv_id, clever_output, "")
+    database.create_thread(conv_id, clever_output, "")
     return redirect(url_for("conversation", conv_id = conv_id, cs = cs, clever_output = clever_output))
 
 # displays webpage
@@ -51,8 +51,8 @@ def clever_output():
     # print "\n" + clever_params["cs"] + "\n"
     # print clever_params["input"]
     user_input = clever_params["input"]
-    # database.update_thread(clever_params["cs"], "user: " + user_input)
-    # database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
+    database.update_thread(clever_params["cs"], "user: " + user_input)
+    database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
     # print gif_array[0]
     gif_array = giphy.search_gif(user_input + " " + clever_output)
     print gif_array[0]

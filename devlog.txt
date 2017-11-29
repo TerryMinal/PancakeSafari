@@ -198,9 +198,14 @@ adamA -- 2017-11-28 19:42
 --------------------------
 - Fixed navbar
    - Now takes up full screen
-   - Added logo 
+   - Added logo
 - Fixed homepage
    - Buttons inline
    - Logo image
-
+terryG -- 2017-11-28 21:00
+--------------------------
+- Added functioning giphy API to webpage
+- updated ajax to update pictures
+- fixed cleverbot route issues
+- 
 ============================================================
