@@ -47,20 +47,21 @@ def db_setup(): # sets up initial database
     return
 
 
-def create_thread(clever_id, input_log, input_url): # creates a new row (thread) within the database
-    global db
-    # try:
-    open_db()
-    c = db.cursor()
-    command = '''INSERT INTO threads
-        VALUES (?, date('now'), ?, ?)'''
-    # print command
-    c.execute(command, (clever_id, input_log, input_url,))      # input_log and input_url are from user/db
-    close()
-    # except:
-    #     print "Error creating thread"
-    #     return False
-    return True
+def create_thread(id, input_log, input_url): # creates a new row (thread) within the database
+        global db
+    #try:
+        open_db()
+        c = db.cursor()
+        command = '''INSERT INTO threads
+            VALUES (?, date('now'), ?, ?)'''
+        # print command
+        c.execute(command, (id, input_log, input_url,))      # input_log and input_url are from user/db
+        close()
+    #except Exception as e:
+    #    print e
+    #    print "Error creating thread"
+    #    return False
+        return True
 
 #gets a specific thread given a index
 def get_thread(index):
