@@ -54,7 +54,7 @@ def clever_output():
     # database.update_thread(clever_params["cs"], "user: " + user_input)
     # database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
     # print gif_array[0]
-    gif_array = giphy.search_gif(user_input + clever_output)
+    gif_array = giphy.search_gif(user_input + " " + clever_output)
     print gif_array[0]
     return jsonify(result=clever_output, gif=gif_array[0])
 

@@ -8,34 +8,43 @@
 
 {% block content %}
 <div class="row" style="margin-top:5%">
-<div class="col-lg-8">
-<div id="chat">
-  {{ clever_output }}
-  <hr>
+  <div class="col">
+    <div id="chat">
+      {{ clever_output }}
+      <hr>
+    </div>
+    <form name="msg" id="msg" class="form-inline">
+          <input class = "form-control" name="clever_input" type="text" id="clever_input">
+          <input class = "form-control" name="conv_id" type="hidden" value="{{conv_id}}">
+          <input class = "form-control" name="cs" type="hidden" value="{{cs}}">
+          <button class = "btn btn-warning" name="submit_clever_input" value="Send"> Submit </button>
+
+    </form>
+  </div>
+
+  <div id="div_old_pic" class="col">
+    <img id="old_pic" src="" height="300px" width="300px" alt="ye old one">
+    <hr>
+    <img id="new_pic" src="" height="300px" width="300px" alt="new picture for you">
+    <form id="choose_new">
+      <input type="submit" value="Send">
+    </form>
+  </div>
+
+<!-- <div id="div_new_pic" class="">
+  <img id="new_pic" src="" height ="50" width="50" alt="new picture for you">
+  <form id="choose_new">
+    <input type="submit" value="Send">
+  </form> -->
+
 </div>
-
-<div id="old_pic">
-
-</div>
-
-<div id="div_new_pic">
-  <span id="new_pic"> </span>
-  <input name="choose_new" type="submit" value="Send">
-</div>
-
 <!-- <form name="msg" id="msg">
       <input name="clever_input" type="text" id="clever_input">
       <input name="conv_id" type="hidden" value="{{conv_id}}">
       <input name="cs" type="hidden" value="{{cs}}">
       <input name="submit_clever_input" type="submit" value="Send"> -->
 
-<form name="msg" id="msg" class="form-inline">
-      <input class = "form-control" name="clever_input" type="text" id="clever_input">
-      <input class = "form-control" name="conv_id" type="hidden" value="{{conv_id}}">
-      <input class = "form-control" name="cs" type="hidden" value="{{cs}}">
-      <button class = "btn btn-warning" name="submit_clever_input" value="Send"> Submit </button>
 
-</form>
 
 
 <script>
@@ -55,8 +64,8 @@ $(document).ready(function() {
         // console.log(data);
         $("#chat").append("Bot: " + data.result + "<hr>");
         image = data.gif;
-        console.log(image);
-        $("#new_pic").replaceWith("<img src=' " + image + " ' height ='50' width='50' alt='new picture for you'>");
+        // console.log(image);
+        $("#new_pic").attr("src", image);
       });
       return false;
     });
@@ -65,10 +74,14 @@ $(document).ready(function() {
 
 // function to select new favorite image
 $(document).ready(function() {
-  $('#choose_new').bind('click', function(e) {
-    $("#old_pic").replaceWith("<img src=' " + image + " ' height ='50' width='50' alt='new_pic'>");
+  $(function() {
+  $('#choose_new').submit(function(e) {
+    e.preventDefault();
+    $("#old_pic").attr("src", image);
+    });
+  });
 });
-});
+
 </script>
 </div>
 <!--
