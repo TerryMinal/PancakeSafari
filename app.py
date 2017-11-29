@@ -18,6 +18,7 @@ def home():
 
 @app.route("/old")
 def old():
+    print database.get_all_threads()
     return render_template("old_convo.html", name=database.get_all_threads())
 
 @app.route("/create_conv")
