@@ -19,7 +19,8 @@
               color:#3C91E6;
               text-decoration: none;
           }
-
+          {% block style %}
+          {% endblock %}
       </style>
     {% endblock %}
   </head>
@@ -38,9 +39,15 @@
 
 
     {% set msgs = get_flashed_messages() %}
-    {% for message in msgs %}
-    {{message}}
-    {% endfor %}
+    {% if msgs %}
+      <br />
+      {% for message in msgs %}
+      <div class="text-center bg-warning"><i>{{message}}</i></div>
+      {% endfor %}
+    {% else %}
+      <br />
+      <br />
+    {% endif %}
 
 
 
