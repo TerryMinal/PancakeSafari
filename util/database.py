@@ -13,13 +13,14 @@ def open_db():
     db = sqlite3.connect(f, check_same_thread=False)  # open if f exists, otherwise create
     return
 
-#closes the database
+# Closes the database
 def close():
     global db
     db.commit()  # save changes
     db.close()  # close database
     return
 
+# For testing and debugging purposes
 def db_count():
     global db
     open_db()
@@ -33,8 +34,8 @@ def db_count():
     close()
     return num[0][0] + 1
 
-
-def db_setup(): # sets up initial database
+# Sets up initial database
+def db_setup():
     global db
     open_db()
     c = db.cursor()
@@ -46,8 +47,8 @@ def db_setup(): # sets up initial database
     close()
     return
 
-
-def create_thread(id, input_log, input_url): # creates a new row (thread) within the database
+# Creates a new row (thread) within the database
+def create_thread(id, input_log, input_url):
     global db
     try:
         open_db()
@@ -63,7 +64,7 @@ def create_thread(id, input_log, input_url): # creates a new row (thread) within
         return False
     return True
 
-#gets a specific thread given a index
+# Gets a specific thread given a index
 def get_thread(index):
     global db
     try:
@@ -81,7 +82,7 @@ def get_thread(index):
 
     return rows[0][0]
 
-
+# Appends a message to a specific thread given the ID and new message
 def update_thread(index, new_message):
     global db
     try:
@@ -100,6 +101,21 @@ def update_thread(index, new_message):
         return False
     return True
 
+# Updates the image url in the database, given the ID of the thread and the url updates
+def update_image(index, gif_url):
+    global db
+    try:
+        open_db()
+        c = db.cursor()
+        c.execute("UPDATE threads SET gif_url = ? WHERE id = ?", (gif_url, index,))
+        close()
+
+    except:
+        print "Error updating image"
+        return False
+    return True
+
+# Returns all threads within the database
 def get_all_threads():
     global db
     try:

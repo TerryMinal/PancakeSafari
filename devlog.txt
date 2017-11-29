@@ -209,3 +209,9 @@ terryG -- 2017-11-28 21:00
 - fixed cleverbot route issues
 - 
 ============================================================
+ireneL -- 2017-11-29 01:13
+--------------------------
+- Changed ID PRIMARY KEY in database from an integer to string (TEXT) based on cleverbot's ID
+- Added update_image method in database to allow saved images to update when displayed
+- Resolved issues regarding updating the thread (i.e. different IDs for the same conversation)
+- Database.py and code relating to databases commented
