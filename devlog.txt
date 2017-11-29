@@ -198,6 +198,7 @@ adamA -- 2017-11-28 19:42
 - Fixed homepage
    - Buttons inline
    - Logo image
+   
 terryG -- 2017-11-28 21:00
 --------------------------
 - Added functioning giphy API to webpage
@@ -211,6 +212,8 @@ ireneL -- 2017-11-29 01:13
 - Added update_image method in database to allow saved images to update when displayed
 - Resolved issues regarding updating the thread (i.e. different IDs for the same conversation)
 - Fixed syntax of responses when viewing old conversations
+- Database.py and code relating to databases commented
+- Default gif (404) given (resolves issue where the user finishes the conversation right after starting aka doesn't type any comments and hence doesn't have a gif)
 - Database.py and code relating to databases commented
 
 shannonL -- 2017-11-29 02:11

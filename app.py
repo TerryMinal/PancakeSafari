@@ -51,6 +51,7 @@ def create_conv():
     # print "\n" + cs + "\n"
     conv_id = j["conversation_id"]
     database.create_thread(conv_id, clever_output, "")
+    database.update_image(conv_id, "http://www.cruiseindubai.com/wp-content/uploads/2014/03/404-bg_2x.gif")
     return redirect(url_for("conversation", conv_id = conv_id, cs = cs, clever_output = clever_output))
 
 # displays new conversation webpage
