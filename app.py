@@ -51,12 +51,12 @@ def clever_output():
     # print "\n" + clever_params["cs"] + "\n"
     # print clever_params["input"]
     user_input = clever_params["input"]
-    database.update_thread(clever_params["cs"], "user: " + user_input)
-    database.update_thread(clever_params["cs"], "cleverbot: " + clever_output)
+    database.update_thread(clever_params["conv_id"], "user: " + user_input)
+    database.update_thread(clever_params["conv_id"], "cleverbot: " + clever_output)
     # print gif_array[0]
     gif_array = giphy.search_gif(user_input + " " + clever_output)
     print gif_array[0]
-    return jsonify(result=clever_output, gif=gif_array[0])
+    return jsonify(result=clever_output, gif=gif_array[0],cs=j["cs"])
 
 if __name__ == "__main__":
     database.db_setup()

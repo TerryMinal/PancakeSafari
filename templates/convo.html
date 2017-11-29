@@ -16,18 +16,18 @@
     <form name="msg" id="msg" class="form-inline">
           <input class = "form-control" name="clever_input" type="text" id="clever_input">
           <input class = "form-control" name="conv_id" type="hidden" value="{{conv_id}}">
-          <input class = "form-control" name="cs" type="hidden" value="{{cs}}">
+          <input id="cs" class = "form-control" name="cs" type="hidden" value="{{cs}}">
           <button class = "btn btn-warning" name="submit_clever_input" value="Send"> Submit </button>
 
     </form>
   </div>
 
   <div id="div_old_pic" class="col">
-    <img id="old_pic" src="" height="300px" width="300px" alt="ye old one">
+    <img id="old_pic" src="" height="300px" width="300px" alt="">
     <hr>
-    <img id="new_pic" src="" height="300px" width="300px" alt="new picture for you">
+    <img id="new_pic" src="" height="300px" width="300px" alt="">
     <form id="choose_new">
-      <input type="submit" value="Send">
+      <input type="submit" value="SAVE">
     </form>
   </div>
 
@@ -66,6 +66,8 @@ $(document).ready(function() {
         image = data.gif;
         // console.log(image);
         $("#new_pic").attr("src", image);
+        $("#cs").attr("value", data.cs);
+        console.log(data.cs);
       });
       return false;
     });
