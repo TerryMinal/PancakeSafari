@@ -2,7 +2,7 @@
 **Adam Abbas, Terry Guan, Irene Lam, Shannon Lau**
 
 ## Overview
-Welcome to Clevergiph! In this site, we've fused the Cleverbot and Giphy APIs. Visitors will be able to talk to a Cleverbot (via API calls), while gifs will pop up based on the context of the conversation. The user can save his/her favorite gif, which can be updated throughout the conversation. Once the user quits the conversation, the conversation history will also be saved alongside the favorite gif. All conversation histories can be accessed at any time, but the user will not be able to respond to the conversation.
+Welcome to Clever Gif! In this site, we've fused the Cleverbot and Giphy APIs. Visitors will be able to talk to a Cleverbot (via API calls), while gifs will pop up based on the context of the conversation. The user can save his/her favorite gif, which can be updated throughout the conversation. Once the user quits the conversation, the conversation history will also be saved alongside the favorite gif. All conversation histories can be accessed at any time, but the user will not be able to respond to the conversation.
 
 ## Dependencies
 - Python 2.7
@@ -12,7 +12,7 @@ Welcome to Clevergiph! In this site, we've fused the Cleverbot and Giphy APIs. V
 
 ## Launching the Program
 
-#### Installing Your Virtual Environment/Flask/Requests
+### Installing Your Virtual Environment/Flask/Requests
 Flask needs to be installed in order to run this program. It is ideally stored in a virtual environment (venv).
 
 To install a venv (with the name <name>), run these commands in your terminal:
@@ -38,7 +38,7 @@ If that method does not work try installing the packages separately
 $ pip install flask
 $ pip install requests
 ```
-#### Acquiring API Keys
+### Acquiring API Keys
 Procure your [Cleverbot](https://www.cleverbot.com/api/) API key:
 1. Add *API 5K Free Trial* to your cart.
 2. Fill out billing details, including name, email address, phone, address, and user password.
@@ -50,7 +50,7 @@ For your [Giphy](https://developers.giphy.com):
 3. Enter app name and description (CLEVERGIF, an application that generates GIFs wwhile chatting with Cleverbot)
 4. Your key will appear on your dashboard.
 
-#### Run It!
+### Run It!
 1. Clone the repo by running:
 ```
 $ git clone git@github.com:slau8/PancakeSafari.git
